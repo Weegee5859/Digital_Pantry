@@ -1,0 +1,256 @@
+<!--
+Author:		Joshua Marshall
+Date:		6/29/2021
+Filename:	home.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="shortcut icon" href="">
+		<!--//General\\-->
+		<title>Digi-Recipe</title> <!--Change to Name of Company.-->
+		<meta charset="utf-8">
+		<!--Jquery/Ajax-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<!--//Stylesheet\\-->
+		<link rel= "stylesheet" type="text/css" href= "{{ url_for('static',filename='css/home.css') }}"/>
+		<!--jQuery Modal stylesheet-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+		<!--//Includes\\-->
+		<script src="https://kit.fontawesome.com/b447306033.js" crossorigin="anonymous"></script>
+		<!--JQuery Modal-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+		<!--SweetAlert2-->
+		<script src="{{ url_for('static',filename='js/sweetalert2.all.min.js') }}"></script>
+		<!--//JS File\\-->
+		<script src="{{ url_for('static',filename='js/myscript.js') }}"></script>
+		<!--swiper test-->
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+		<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+		<!--Splide (Swiper) testing-->
+		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css" />
+		
+		<!--swiper test-->
+		<!--Testing-->
+		<link rel="stylesheet" href= "{{ url_for('static',filename='css/iziModal.min.css') }}">
+		<script src="{{ url_for('static',filename='js/iziModal.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/dropzone.min.js') }}"></script>
+		<link rel="stylesheet" href= "{{ url_for('static',filename='css/dropzone.min.css') }}" />
+
+		<link rel="stylesheet" href= "{{ url_for('static',filename='css/boxed-check.css') }}" />
+		<link rel="stylesheet" href= "{{ url_for('static',filename='css/boxed-check.min.css') }}" />
+
+		<script src="{{ url_for('static',filename='js/rSlider.min.js') }}"></script>
+		<link rel="stylesheet" href= "{{ url_for('static',filename='css/rSlider.min.css') }}" />
+
+		<script src="{{ url_for('static',filename='js/jquery-ui.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/jquery-ui.min.js') }}"></script>
+		<link rel="stylesheet" href= "{{ url_for('static',filename='css/jquery-ui.css') }}" />
+		<link rel="stylesheet" href= "{{ url_for('static',filename='css/jquery-ui.min.css') }}" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+		<link rel="icon" type="image/png" href="{{ url_for('static',filename='favicon.png') }}">
+	</head>
+	<body id="home" >
+
+		<!--
+		<div class="grid"></div>
+		<div class="cover"></div>
+	-->
+
+		<div id="body_title_container">
+			<img class="title_design" src='{{ url_for("static",filename="title_design.png") }}'>
+
+			<div class="typewriter">
+				<div class="typewriter-text">Digital</div>
+			</div>
+			<p>Pantry</p>
+
+			<img class="title_design" src='{{ url_for("static",filename="title_design.png") }}'>
+		</div>
+
+		<div id="logo_container">
+			<img id="logo" src='{{ url_for("static",filename="apple.png") }}'>
+			<div id="chunk_1"></div>
+			<div id="chunk_2"></div>
+			<div id="chunk_3"></div>
+		</div>
+		
+		<div id="main_menu_container">
+			<div id="create_recipe" class="main_menu_option">
+				<i class="fas fa-utensils"></i>
+				<p >Create</p>
+			</div>
+			<div id="view_recipe" class="main_menu_option">
+				<i class="fas fa-book"></i>
+				<p >View</p>
+			</div>
+			<div id="option_recipe" class="main_menu_option">
+				<i class="fas fa-cogs"></i>
+				<p >WIP</p>
+			</div>
+		</div>
+
+	<!--DEMO01-->
+	<div id="modal" data-iziModal-fullscreen="true" data-iziModal-title="Recipe Creation" data-iziModal-subtitle="Subtitle" data-iziModal-icon="icon-home">
+    <!-- Modal content -->  
+	    <div id="create_container">
+	    	<p id="recipe_create_title">Create-A-Recipe!</p>
+	    	<p id="recipe_create_subtitle">Place all your Recipe PDF or Website Links down below!</p>
+			<div id="create_form_container">
+				<div id="create_website_container">
+					<p id="create_website_title">Enter your Websites Below!</p>
+					<div id="create_website_dotted_container">
+						<div id="create_website_input_container">
+							<input id="create_website" placeholder="Paste website link here..."></input>
+							<button id="create_website">+</button>
+						</div>
+						<ul id="create_website"></ul>
+					</div>
+				</div>
+				<div id="dropzone_container">
+					<p id="dropzone_title">Drop your Files Below!</p>
+					<form action='/upload' class="dropzone" id="my_dropzone"></form>
+				</div>
+			</div>
+			<div id="submit">Submit</div>
+	    </div>
+	</div>
+	<!--DEMO01-END-->
+
+	<!--DEMO02-->
+	<div id="modal2" data-iziModal-fullscreen="true" data-iziModal-title="Recipe Creation" data-iziModal-subtitle="Subtitle" data-iziModal-icon="icon-home">
+    <!-- Modal 2 content -->
+	<div class="recipe_swiper">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
+				<!-- Slides -->
+				<div class="swiper-slide">Avatars 1</div>
+				<div class="swiper-slide">Avatars 2</div>
+				<div class="swiper-slide">Avatars 3</div>
+			</div>
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+		</div>
+    </div>
+	<!--DEMO02-END-->
+	<!--DEMO03-->
+	<div id="modal3" data-iziModal-fullscreen="true" data-iziModal-title="Recipe Book" data-iziModal-subtitle="Recipe Book" data-iziModal-icon="icon-home">
+			
+		<div id="recipe_book_main_container">
+			<i class="fas fa-pizza-slice" id="recipeIcon1"></i>
+			<i class="fas fa-pizza-slice" id="recipeIcon2"></i>
+			<i class="fas fa-pizza-slice" id="recipeIcon3"></i>
+			<i class="fas fa-pizza-slice" id="recipeIcon4"></i>
+			<i class="fas fa-pizza-slice" id="recipeIcon5"></i>
+			<div id="food_type_selector_container"></div>
+			<div id="recipe_right_container">
+				<div id="search_container">
+					<i class="fas fa-search" id="search_icon"></i>
+					<input type="search" id="mymy" placeholder="Enter Recipe Name"></input>
+				</div>
+				<div class="container" id="recipe_book_container"></div>
+			</div>
+		</div>
+	</div>
+	<!--DEMO03-END-->
+	<div id="modal4" data-iziModal-fullscreen="true" data-iziModal-title="Recipe PDF Viewer" data-iziModal-subtitle="PDF View" data-iziModal-icon="icon-home">
+		<object data="/recipe/test.pdf" id="recipe_pdf_object" width="100%" height="800">
+		    <embed ng-src="/recipe/test.pdf" id="recipe_pdf_embed" width="100%" height="800"> </embed>
+		</object>
+	</div>
+	<div style="display: none">
+		<div id="recipe_form_container">
+    		<input name="Name" placeholder="Enter Recipe Name"></input>
+    		<button id="swiping"></button>
+
+    		<div id="food_type_container">
+				<div>
+					<input type="checkbox" id="breakfast" name="breakfast" value="Breakfast">
+					<label for="breakfast">Breakfast</label>
+				</div>
+				<div>
+					<input type="checkbox" id="lunch" name="lunch" value="Lunch">
+					<label for="lunch">Lunch</label>
+				</div>
+				<div>
+					<input type="checkbox" id="dinner" name="dinner" value="Dinner">
+					<label for="dinner">Dinner</label>
+				</div>
+				<div>
+					<input type="checkbox" id="desert" name="desert" value="Desert">
+					<label for="desert">Desert</label>
+				</div>
+			</div>
+
+			<div id="image_container">
+				<div id="image_display"></div>
+				<div class="sampleSlider"></div>
+				<label id="amount"></label>
+			</div>
+
+			<div class="recipe_card" id="recipe_card">
+				<div class="recipe_image_container">
+					<img class="recipe_image" onerror="this.onerror=null;this.src='{{ url_for('static',filename='unknown.png') }}';">
+				</div>
+				<p class="recipe_title">Title</p>
+				<div class="favorite_banner">
+					<i class="fas fa-star"></i>
+				</div>
+				<p class="food_type"></p>
+				<div class="recipe_option_container">
+					<i class="fas fa-trash" id="close_card"></i>
+					<i class="fas fa-edit" id="edit_card"></i>
+					<i class="fas fa-star" id="favorite_card"></i>
+				</div>
+			</div>
+
+			<div class="recipe_edit_card" id="recipe_edit_card">
+				<div class="edit_button" id="edit_button_name">
+					<i class="fas fa-signature"></i>
+					<p>Name</p>
+				</div>
+				<div class="edit_button" id="edit_button_image">
+					<i class="fas fa-images"></i>
+					<p>Image</p>
+				</div>
+				<div class="edit_button" id="edit_button_type">
+					<i class="fas fa-utensils"></i>
+					<p>Type</p>
+				</div>
+				<div class="edit_button" id="edit_button_pdf">
+					<i class="fas fa-file-pdf"></i>
+					<p>PDF</p>
+				</div>
+			</div>
+
+			<div id="recipe_edit_images">
+				<!-- Avatar main container -->
+				<div class="mySwipe">
+					<div class="mySwipeImageContainer">
+						<img class="mySwipeImage"/>
+					</div>
+					<div class="mySwipeArrows">
+						<div class="mySwipeLeftArrow"></div>
+						<p class="mySwipeImageText">0 of 0 Images</p>
+						<div class="mySwipeRightArrow"></div>
+					</div>
+				</div>
+			</div>
+
+			<div id="recipe_edit_type">
+				<select id="type_select" class="type_select"></select>
+			</div>
+    	</div>
+	</body>
+	
+</html>
