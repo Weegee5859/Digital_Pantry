@@ -12,11 +12,12 @@ etelemetry==0.3.0
 exceptiongroup==1.1.2
 filelock==3.12.2
 fitz==0.0.1.dev2
-Flask==2.0.1
+Flask==2.2.5
 Flask-SQLAlchemy==2.5.1
 frontend==0.0.3
 future==0.18.3
 greenlet==2.0.2
+grunt=1.5.3
 h11==0.14.0
 httplib2==0.22.0
 idna==3.4
@@ -35,7 +36,7 @@ packaging==23.1
 pandas==2.0.3
 pathlib==1.0.1
 pdf2image==1.16.0
-Pillow==8.2.0
+Pillow==9.2.0
 prov==2.0.0
 pydot==1.4.2
 pyparsing==3.1.1
