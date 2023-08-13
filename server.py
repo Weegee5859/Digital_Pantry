@@ -7,6 +7,11 @@ import base64
 import os
 import find_foods as find_food
 
+
+if not os.path.exists(os.path.abspath(os.getcwd())+"/database"):
+	os.makedirs('database')
+if not os.path.exists(os.path.abspath(os.getcwd())+"/recipe"):
+	os.makedirs('recipe')
 database_path = os.path.abspath(os.getcwd())+"/database/test.db"
 
 # Define Flask and SocketIO Server
